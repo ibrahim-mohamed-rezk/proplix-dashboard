@@ -1,0 +1,25 @@
+.house-bx{
+	background:#282C4B;
+	p{
+		color:rgba($white,0.6);
+		font-weight:300;
+	}
+	svg{
+		margin-right:1.2rem;
+	}
+}
+.order-list-table {
+	.dataTables_wrapper .dataTables_paginate .paginate_button {
+		display: inline-block;
+	}
+	.table {
+		tbody{
+			tr{
+				border-bottom: 1px solid #e6e6e6;
+				&:last-child{
+					border-bottom: none
+				}
+			}
+		}
+	}
+}
