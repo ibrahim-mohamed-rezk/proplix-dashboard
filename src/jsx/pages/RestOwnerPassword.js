@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { OwnerSendCodeService } from "../../services/Owner-forgotpassword";
 import { useNavigate } from "react-router-dom";
 
-const ForgotPassword = () => {
+const RestOwnerPassword = () => {
   const navigate = useNavigate();
   const initialValues = {
     phone_or_email: "",
@@ -77,4 +77,4 @@ const ForgotPassword = () => {
     </div>
   );
 };
-export default ForgotPassword;
+export default RestOwnerPassword;

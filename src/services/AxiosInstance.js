@@ -1,16 +1,21 @@
 import axios from 'axios';
-import { store } from '../store/store';
 
 const axiosInstance = axios.create({
-    baseURL: `https://react-course-b798e-default-rtdb.firebaseio.com/`,
+  baseURL: 'https://lemonchiffon-octopus-104052.hostingersite.com/api/v1/dashboard/agent/',
 });
 
-axiosInstance.interceptors.request.use((config) => {
-    const state = store.getState();
-    const token = state.auth.auth.idToken;
-    config.params = config.params || {};
-    config.params['auth'] = token;
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const { store } = require('../store/store');
+    const token = store.getState().auth?.auth?.token;
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
     return config;
-});
+  },
+  (error) => Promise.reject(error)
+);
 
 export default axiosInstance;

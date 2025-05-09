@@ -4,8 +4,6 @@ import { Uploader } from 'rsuite';
 
 import PageTitle from '../../layouts/PageTitle';
 
-
-
 const Rent = [
     { value: '1', label: 'For Rent' },
     { value: '2', label: 'For Sale' },
